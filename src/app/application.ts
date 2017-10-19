@@ -1400,6 +1400,13 @@ export class Application {
                 }, (e) => {
                     logger.error(e);
                 });
+            // if (this.configuration.mainData.exporting === 'json-simplified' || this.configuration.mainData.exporting === 'json') {
+                logger.info('Preparing JSON export...');
+                this.exportEngine.processDataStructure(this.dependenciesEngine, this.configuration).then((jsonData) => {
+                    this.exportEngine.exportAllFormats(jsonData, this.configuration);
+                }, (e) => {
+                    logger.error(e);
+                });
             })
             .catch((e) => {
                 logger.error(e);

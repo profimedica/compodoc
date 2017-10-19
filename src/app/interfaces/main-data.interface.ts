@@ -1,6 +1,8 @@
 export interface MainDataInterface {
     output: string;
     theme: string;
+    exporting: string;
+    exportingConfiguration: string;
     extTheme: string;
     serve: boolean;
     port: number;
